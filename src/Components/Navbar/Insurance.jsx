@@ -4,9 +4,30 @@ import { FaPiggyBank } from 'react-icons/fa'
 import { FaHeartbeat } from 'react-icons/fa'
 import { AiFillCar } from 'react-icons/ai'
 import { Link } from "react-router-dom"
-import Data from "./Data"
+//import Data from "./Data"
+import { useEffect } from 'react'
+import { useState } from 'react'
 const Insurance=({hoverstate,sethoverstate})=>
 {
+    const[TermInsurance,setterminsurance]=useState([])
+    const[OtherInsurance,setotherinsurance]=useState([])
+    const[InvestmentPlans,setinvestmentplans]=useState([])
+    const[HealthInsurance,sethealthinsurance]=useState([])
+    const[CarInsurance,setcarinsurance]=useState([])
+    useEffect(()=>
+    {
+        const f=async()=>
+        {
+            let res=await fetch(`http://localhost:3000/navbar`)
+            let data=await res.json()
+            setterminsurance(data.data[0].TermInsurance)
+            setotherinsurance(data.data[0].OtherInsurance)
+            setinvestmentplans(data.data[0].InvestmentPlans)
+            sethealthinsurance(data.data[0].HealthInsurance)
+            setcarinsurance(data.data[0].CarInsurance)
+        }
+        f()
+    },[])
     return(
         <div id="navbarinsuranceprod">
         <div>
@@ -16,8 +37,8 @@ const Insurance=({hoverstate,sethoverstate})=>
             </div>
             <ul style={{listStyleType:"none"}}>
                 {
-                    //console.log(typeof Data.TermInsurance)
-                    Data.TermInsurance.map((ele,i)=>
+                    //console.log(Data.TermInsurance)
+                    TermInsurance.map((ele,i)=>
                     {
                         return (
                             <li key={i}><Link onClick={()=>
@@ -37,7 +58,7 @@ const Insurance=({hoverstate,sethoverstate})=>
             <ul style={{listStyleType:"none"}}>
                 {
                     //console.log(typeof Data.TermInsurance)
-                    Data.OtherInsurance.map((ele,i)=>
+                    OtherInsurance.map((ele,i)=>
                     {
                         return (
                             <li key={i}><Link onClick={()=>
@@ -57,7 +78,7 @@ const Insurance=({hoverstate,sethoverstate})=>
             <ul style={{listStyleType:"none"}}>
                 {
                     //console.log(typeof Data.TermInsurance)
-                    Data.InvestmentPlans.map((ele,i)=>
+                    InvestmentPlans.map((ele,i)=>
                     {
                         return (
                             <li key={i}><Link onClick={()=>
@@ -78,7 +99,7 @@ const Insurance=({hoverstate,sethoverstate})=>
             <ul style={{listStyleType:"none"}}>
                 {
                     //console.log(typeof Data.TermInsurance)
-                    Data.HealthInsurance.map((ele,i)=>
+                    HealthInsurance.map((ele,i)=>
                     {
                         return (
                             <li key={i}><Link onClick={()=>
@@ -99,7 +120,7 @@ const Insurance=({hoverstate,sethoverstate})=>
             <ul style={{listStyleType:"none"}}>
                 {
                     //console.log(typeof Data.TermInsurance)
-                    Data.CarInsurance.map((ele,i)=>
+                    CarInsurance.map((ele,i)=>
                     {
                         return (
                             <li key={i}><Link onClick={()=>
