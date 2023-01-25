@@ -1,0 +1,65 @@
+tr>td>img{
+    width: 100px;
+
+}
+tr{
+    height: 60px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    
+}
+.maxage{
+    display: grid;
+    align-content: center;
+    text-align: center;
+}
+table{
+    width: 70%;
+    padding: 30px;
+}
+tbody>tr{
+    height: 80px;
+    border-radius: 10px;
+}
+td>button{
+    width: 100px;
+    height: 30px;
+    border-radius:0 10px 10px 0 ;
+    background-color: orangered;
+    color: white;font-size: larger;
+    font-weight: 500;
+}
+.main_table{
+    display: flex;
+}
+.main_table>div:last-child{
+    display: grid;
+    margin: 10px;
+    padding-left: 10px;
+}
+.main_table>div:last-child>div:first-child>ul>ol{
+    font-size: small;
+    color: rgb(73, 73, 73);
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.main_table>div:last-child>div:first-child>ul{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+    
+    padding: 20px;
+}
+.button1>button:first-child{
+border-radius: 10px 0 0 10px;
+margin-right: 5px;
+padding: 5px;
+}
+.button1>button:last-child{
+    border-radius: 0 10px 10px 0;
+    padding: 5px;
+    }
+  
+    
+.span1{
+    font-weight: 200;
+}

@@ -1,0 +1,30 @@
+.page2_display{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 30px;
+    padding: 40px;
+}
+.page2_display>input{
+    width: 30%;
+    border-radius: 10px;
+}
+.page2_display+div{
+    display: grid;
+    justify-content: center;
+}
+.page2_display+div>button{
+    width: 300%;
+    height: 40px;
+    border-radius: 10px;
+}
+.selectage{
+    margin-left: 10px;
+    margin-top: 50px;
+}
+fieldset{
+    border:2px solid rgb(107, 105, 105)
+}
+fieldset>input{
+    padding: 10px;
+    margin-left: 40px;
+}
