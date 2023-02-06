@@ -14,7 +14,8 @@ const Navbar=()=>
 {
     let logindata=JSON.parse(sessionStorage.getItem("loggedInUserInfo"))
     let navigate=useNavigate()
-   const dispatch = useDispatch(); const[hoverstate,sethoverstate]=useState({IP:false,RP:false,Cl:false,Sup:false})
+   const dispatch = useDispatch(); 
+   const[hoverstate,sethoverstate]=useState({IP:false,RP:false,Cl:false,Sup:false})
     const[display,setdisplay]=useState(false)
     return(
         <div style={{display:"flex",alignItems:"center",width:"100%"}}>
@@ -27,7 +28,7 @@ const Navbar=()=>
         <div id="navparent" onMouseEnter={()=>sethoverstate({IP:false,RP:false,Cl:false,Sup:false})}>
             
             <div onMouseEnter={()=>sethoverstate({IP:false,RP:false,Cl:false,Sup:false})}>
-                <Link to="/"><img id="navlogo" alt="policyimage" src="https://static.pbcdn.in/cdn/images/new-home/chlogopb.gif?v=1"/></Link>
+                <Link to="/"><img id="navlogo" alt="policyimage" src="https://static.pbcdn.in/cdn/images/new-home/logopb.svg?v=5"/></Link>
             </div>
             <div>
                 <div onMouseEnter={()=>sethoverstate({...hoverstate,IP:true,RP:false,Cl:false,Sup:false})}>

@@ -18,7 +18,7 @@ const Insurance=({hoverstate,sethoverstate})=>
     {
         const f=async()=>
         {
-            let res=await fetch(`http://localhost:3000/navbar`)
+            let res=await fetch(`http://localhost:4000/navbar`)
             let data=await res.json()
             setterminsurance(data.data[0].TermInsurance)
             setotherinsurance(data.data[0].OtherInsurance)
