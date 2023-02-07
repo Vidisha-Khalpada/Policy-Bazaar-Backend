@@ -17,18 +17,22 @@ import {
   AlertDescription,
   useToast,
 } from "@chakra-ui/react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
+  const url=process.env.REACT_APP_URL
   const [loading, setLoading] = useState(false);
   const [allUsers, setAllUsers] = useState([]);
   const [submissionStatus, setSubmissionStatus] = useState(false);
   const [inputState, setInputState] = useState({
-    phoneNumber: "",
+    email: "",
     password: "",
     name: "",
   });
 
   const dispatch = useDispatch();
+  const Navigate=useNavigate()
   const toast = useToast({ position: "top" });
 
   const handleValuedInput = (e) => {
@@ -39,9 +43,9 @@ function LoginForm() {
   };
 
   const handleFormSubmit = (e) => {
-    if (inputState.phoneNumber.length !== 10) {
+    if (inputState.email.length == 0) {
       toast({
-        title: `Invalid Phone Number. Enter Correct One`,
+        title: `Invalid Email. Enter Correct One`,
         status: "error",
         isClosable: true,
       });
@@ -56,64 +60,83 @@ function LoginForm() {
     }
 
     setLoading(true);
-    setTimeout(() => {
-      if (isValidUser()) {
-        setLoading(false);
-      } else {
-        setLoading(false);
-        toast({
-          title: `Error! Login failed. Please recheck the phone number and password and try again.`,
-          status: "error",
-          isClosable: true,
-        });
-      }
-    }, 2000);
+    isValidUser()
   };
 
   const isValidUser = () => {
     let present = false;
-    allUsers.forEach((ele) => {
-      if (
-        inputState.phoneNumber === ele.phoneNumber &&
-        inputState.password === ele.password
-      ) {
-        present = true;
-        const user = {
-          isAuth: true,
-          name: ele.name,
-          phoneNumber: ele.phoneNumber,
-        };
-        sessionStorage.setItem("loggedInUserInfo", JSON.stringify(user));
+    axios.post(`${url}/api/login`,inputState,{
+      headers:{
+        "Content-Type":"application/json"
+      }
+    }).then((res)=>
+    {
+      if(res.data.token)
+      {
+        localStorage.setItem("authtoken",res.data.token)
+        localStorage.setItem("name",res.data.name)
         setLoading(false);
         setSubmissionStatus(true);
         setTimeout(() => {
-          setSubmissionStatus(false);
-          loginAction(user, dispatch);
+        setSubmissionStatus(false);
         }, 3000);
+        Navigate("/")
       }
-    });
-    setLoading(false);
+      else
+      {
+        setLoading(false)
+        toast({
+          title: `Error! Login failed. Please recheck the email and password and try again.`,
+          status: "error",
+          isClosable: true,
+        });
+      }
+      
+    })
+    
+    
+    // allUsers.forEach((ele) => {
+    //   if (
+    //     inputState.email === ele.email &&
+    //     inputState.password === ele.password
+    //   ) {
+    //     present = true;
+    //     const user = {
+    //       isAuth: true,
+    //       name: ele.name,
+    //       email: ele.email,
+    //     };
+    //     sessionStorage.setItem("loggedInUserInfo", JSON.stringify(user));
+    //     setLoading(false);
+    //     setSubmissionStatus(true);
+    //     setTimeout(() => {
+    //       setSubmissionStatus(false);
+    //       loginAction(user, dispatch);
+    //     }, 3000);
+    //   }
+    // });
+    // setLoading(false);
     return present;
   };
 
-  const getAllUser = async () => {
-    try {
-      let res = await fetch(`https://mock-server-app-6y5e.onrender.com/regUser`);
-      let resData = await res.json();
-      setAllUsers(resData);
-    } catch (error) {
-      console.log(error);
-      toast({
-        title: `There was an error processing your request`,
-        status: "error",
-        isClosable: true,
-      });
-    }
-  };
+  // const getAllUser = async () => {
+  //   try {
+  //     let res = await fetch(`https://mock-server-app-6y5e.onrender.com/regUser`);
+  //     let resData = await res.json();
+  //     setAllUsers(resData);
+  //   } catch (error) {
+  //     console.log(error);
+  //     toast({
+  //       title: `There was an error processing your request`,
+  //       status: "error",
+  //       isClosable: true,
+  //     });
+  //   }
+  // };
 
-  useEffect(() => {
-    getAllUser();
-  }, []);
+  // useEffect(() => {
+  //   getAllUser();
+  // }, []);
 
   if (submissionStatus) {
     return (
@@ -142,21 +165,17 @@ function LoginForm() {
   return (
     <div>
       <VStack spacing={6} align="flex-start">
-        <FormControl isInvalid={inputState.phoneNumber.length > 10}>
+        <FormControl isInvalid={inputState.email.length > 10}>
           <InputGroup>
-            <InputLeftAddon bg={"#3182ce"} color="white" children="+91 " />
+            
             <Input
-              type="number"
-              placeholder="Mobile Number"
-              name="phoneNumber"
+              type="email"
+              placeholder="Enter Email"
+              name="email"
               onChange={handleValuedInput}
             />
           </InputGroup>
-          {inputState.phoneNumber.length == 0 ? (
-            <FormHelperText>* Phone No is required</FormHelperText>
-          ) : (
-            <FormErrorMessage>Invalid Phone Number</FormErrorMessage>
-          )}
+          
         </FormControl>
 
         <FormControl

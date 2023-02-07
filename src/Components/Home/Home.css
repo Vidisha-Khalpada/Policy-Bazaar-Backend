@@ -15,33 +15,15 @@
   color: #776bfd;
   font-size: 14px;
   width: 150px;
-  margin-left: 55px;
-  top: 230px;
-  position: absolute;
-  margin-top: 25px;
   /* background-color: #f2f7ff; */
 }
 
 .home-cont2 {
-  color: #ff9b2c;
+  color:rgb(255,200,95);
   font-size: 14px;
   width: 150px;
-  margin-left: 230px;
-  top: 230px;
-  position: absolute;
-  margin-top: 25px;
 }
-.home-img0 {
-  margin-top: 45px;
-  margin-right: 10px;
-}
-.home-img {
-  position: absolute;
-  left: 390px;
-  top: 245px;
-  margin-left: 30px;
-  margin-top: 10px;
-}
+
 .home-img2 {
   top: 90px;
   left: 800px;
@@ -84,25 +66,21 @@
   top: 135px;
 }
 .home-maind {
-  position: absolute;
-  width: 80%;
-  height: 50%;
-  margin-top: 6%;
-  left: 7%;
+ 
+ display: grid;
+ grid-template-columns: repeat(7,1fr);
+ gap: 40px;
+ width: 70%;
+ margin-top: 100px;
 }
 
 .home-tol {
-  margin-right: 15px;
-  margin-bottom: 15px;
-  margin-top: 15px;
   width: 118px;
-  height: 90px;
   padding-top: 10px;
   padding-bottom: 10px;
   /* padding: 1%; */
   text-align: center;
 
-  float: right;
   border-radius: 5px;
   background-color: #f2f7ff;
   /* box-shadow: #a8bde0 0px 0px 20px -5px, #aebdd6 0px 10px 10px -5px; */
@@ -170,7 +148,7 @@
   border-radius: 5px;
 }
 .home-also {
-  margin-top: 30%;
+  margin-top: 40px;
   color: #0663f6;
   font-size: 13px;
   font-weight: 600;
@@ -180,7 +158,6 @@
   color: #998dd9;
   font-family: Roboto, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI,
     Helvetica Neue, Arial, sans-serif;
-  margin-bottom: 0px;
 }
 .home-te1 {
   font-size: 12px;

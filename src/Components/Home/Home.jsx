@@ -84,25 +84,23 @@ const HomePage = () => {
             />
           </div>
 
-          <div style={{ display: "flex", flexDirection: "row" }}>
-            <div>
-              <p>
-                <img className="home-img0" src={thunder} alt="thunder" />
-                <p className="home-cont1">
-                  50+ insurers with one of the best prices{" "}
-                </p>
+          <div style={{ display: "flex", flexDirection: "row",marginTop:"20px",gap:"40px"}}>
+              <div style={{display:"flex",gap:"20px", alignItems:"center"}}>
+              <img className="home-img0" src={thunder} alt="thunder" />
+              <p className="home-cont1">
+                50+ insurers with one of the best prices{" "}
               </p>
-            </div>
+              </div>
 
-            <div>
-              <p>
+              <div style={{display:"flex",gap:"20px", alignItems:"center"}}>
+              
                 <img className="home-img" src={thunder1} alt="thunder" />
                 <p className="home-cont2">Quick, easy & hassle free</p>
-              </p>
-            </div>
+              
+              </div>
           </div>
 
-          <div className="home-maind" style={{ marginLeft: "50px" }}>
+          <div className="home-maind">
             <div className="home-tol">
               <img src={umre} alt="one" />
               <p className="home-tm">Travel Insurance </p>
@@ -163,12 +161,12 @@ const HomePage = () => {
               <p className="home-tm">Guaranteed Return Plans </p>
             </div>
 
-            <div className="home-tol" style={{ marginLeft: "6%" }}>
+            <div className="home-tol" >
               <img src={umre} alt="one" />
               <p className="home-tm">Saral Jeevan Bima </p>
             </div>
 
-            <div className="home-tol" style={{ marginRight: "-50px" }}>
+            <div className="home-tol" >
               <img src={cr} alt="one" />
               <p className="home-tm"> Zero Cost Term Plan </p>
             </div>
@@ -177,18 +175,17 @@ const HomePage = () => {
 
         <p
           className="home-also"
-          style={{ marginLeft: "45px", marginBottom: "10px" }}
         >
           ALSO BUY
         </p>
         <Grid
           container
-          spacing={3}
+          spacing={2.5}
           style={{
             width: "80%",
             alignItems: "left",
             textAlign: "left",
-            marginLeft: "20px",
+            marginTop:"5px"
           }}
         >
           <Grid item xs="auto">
@@ -275,16 +272,12 @@ const HomePage = () => {
         </Grid>
       </div>
       <br></br>
-      <br></br>
-      <br></br>
 
       <div
         style={{ backgroundColor: "#F0F6FF", cursor: "pointer", padding: "3%" }}
       >
-        <div style={{ marginLeft: "5%", height: "100%", marginBottom: "2%" }}>
-          <Carousel
-            style={{ marginLeft: "5%", height: "100%", marginBottom: "2%" }}
-          />
+        <div style={{ marginLeft: "5%", height: "100%"}}>
+          <Carousel />
         </div>
       </div>
       <div>

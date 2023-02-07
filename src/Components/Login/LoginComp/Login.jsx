@@ -46,7 +46,7 @@ function Login() {
           </div>
           <div>
             <h3>
-              To {page ? "sign in" : "sign up"}, please enter your mobile number
+              To {page ? "sign in" : "sign up"}, please enter your email address
             </h3>
           </div>
         </div>

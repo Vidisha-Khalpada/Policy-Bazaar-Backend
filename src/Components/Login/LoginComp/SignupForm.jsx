@@ -19,10 +19,11 @@ import {
 
 function SignupForm({ gotoPrevious }) {
   const [loading, setLoading] = useState(false);
+  const url=process.env.REACT_APP_URL
   const [submissionStatus, setSubmissionStatus] = useState(false);
-  const [allUsers, setAllUsers] = useState([]);
+  // const [allUsers, setAllUsers] = useState([]);
   const [inputState, setInputState] = useState({
-    phoneNumber: "",
+    email: "",
     name: "",
     password: "",
   });
@@ -36,9 +37,9 @@ function SignupForm({ gotoPrevious }) {
   };
 
   const handleFormSubmit = (e) => {
-    if (inputState.phoneNumber.length !== 10) {
+    if (inputState.email.length===0) {
       toast({
-        title: `Invalid Phone Number. Enter Correct One`,
+        title: `Invalid email. Enter Correct One`,
         status: "error",
         isClosable: true,
       });
@@ -57,45 +58,68 @@ function SignupForm({ gotoPrevious }) {
         isClosable: true,
       });
       return;
-    } else if (hasAlreadyRegistered()) {
-      toast({
-        title: `This Phone Number already exist in our database.`,
-        status: "success",
-        isClosable: true,
-      });
-      gotoPrevious();
-      return;
-    } else {
+    } 
+    // else if (hasAlreadyRegistered()) {
+    //   toast({
+    //     title: `This User already exist in our database.`,
+    //     status: "success",
+    //     isClosable: true,
+    //   });
+    //   gotoPrevious();
+    //   return;
+    // } 
+    else {
       postData();
     }
   };
 
-  const hasAlreadyRegistered = () => {
-    let present = false;
-    allUsers.map(({ phoneNumber }) => {
-      if (phoneNumber === inputState.phoneNumber) {
-        present = true;
-      }
-    });
-    return present;
-  };
+  // const hasAlreadyRegistered = () => {
+  //   let present = false;
+  //   allUsers.map(({ email }) => {
+  //     if (email === inputState.email) {
+  //       present = true;
+  //     }
+  //   });
+  //   return present;
+  // };
 
   const postData = async () => {
     try {
       setLoading(true);
-      let res = await fetch(`https://mock-server-app-6y5e.onrender.com/regUser`, {
+      let res = await fetch(`${url}/api/register`, {
         method: "POST",
         body: JSON.stringify(inputState),
         headers: { "Content-type": "application/json" },
       });
-      setTimeout(() => {
-        setLoading(false);
-        setSubmissionStatus(true);
-        setTimeout(() => {
-          setSubmissionStatus(false);
-          gotoPrevious();
-        }, 2000);
-      }, 2000);
+      // setTimeout(() => {
+      //   setLoading(false);
+      //   setTimeout(() => {
+      //     setSubmissionStatus(false);
+      //     gotoPrevious();
+      //   }, 2000);
+      // }, 2000);
+      let message=await res.json()
+      if(message.message=="The user has already registered.. Please login to continue..")
+      {
+        setLoading(false)
+        setSubmissionStatus(false)
+        toast({
+          title: `The user is already registered...Please login to continue`,
+          status: "warning",
+          isClosable: true
+        })
+      }
+      else
+      {
+        setLoading(false)
+        setSubmissionStatus(true)
+        toast({
+          title:"Congratulations... Your account has been successfully created!!",
+          status:"success",
+          isClosable:true
+        })
+      }
+      gotoPrevious()
     } catch (error) {
       console.log(error);
       toast({
@@ -106,24 +130,24 @@ function SignupForm({ gotoPrevious }) {
     }
   };
   
-  const getAllUser = async () => {
-    try {
-      let res = await fetch(`https://mock-server-app-6y5e.onrender.com/regUser`);
-      let resData = await res.json();
-      setAllUsers(resData);
-    } catch (error) {
-      console.log(error);
-      toast({
-        title: `There was an error processing your request`,
-        status: "error",
-        isClosable: true,
-      });
-    }
-  };
+  // const getAllUser = async () => {
+  //   try {
+  //     let res = await fetch(`${url}/api/register`);
+  //     let resData = await res.json();
+  //     setAllUsers(resData);
+  //   } catch (error) {
+  //     console.log(error);
+  //     toast({
+  //       title: `There was an error processing your request`,
+  //       status: "error",
+  //       isClosable: true,
+  //     });
+  //   }
+  // };
 
-  useEffect(() => {
-    getAllUser();
-  }, []);
+  // useEffect(() => {
+  //   getAllUser();
+  // }, []);
 
   if (submissionStatus) {
     return (
@@ -152,27 +176,23 @@ function SignupForm({ gotoPrevious }) {
   return (
     <div>
       <VStack spacing={6} align="flex-start">
-        <FormControl isInvalid={inputState.phoneNumber.length > 10}>
+        <FormControl isInvalid={inputState.email.length > 10}>
           <InputGroup>
-            <InputLeftAddon bg={"#3182ce"} color="white" children="+91 " />
+            
             <Input
-              type="number"
-              placeholder="Mobile Number"
-              name="phoneNumber"
+              type="text"
+              placeholder="Enter your Name"
+              name="name"
               onChange={handleValuedInput}
             />
           </InputGroup>
-          {inputState.phoneNumber.length === 0 ? (
-            <FormHelperText>* Phone No is required</FormHelperText>
-          ) : (
-            <FormErrorMessage>Invalid Phone Number</FormErrorMessage>
-          )}
+          
         </FormControl>
         <FormControl>
           <Input
             type={"text"}
-            placeholder="Enter Your Name"
-            name="name"
+            placeholder="Enter Your Email"
+            name="email"
             onChange={handleValuedInput}
           />
         </FormControl>

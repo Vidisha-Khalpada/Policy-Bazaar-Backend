@@ -12,7 +12,8 @@ import { logoutAction } from "../Login/Redux/Login/loginAction"
 import { useDispatch } from "react-redux"
 const Navbar=()=>
 {
-    let logindata=JSON.parse(sessionStorage.getItem("loggedInUserInfo"))
+    let logindata=localStorage.getItem("authtoken")
+    let name=localStorage.getItem("name")
     let navigate=useNavigate()
    const dispatch = useDispatch(); 
    const[hoverstate,sethoverstate]=useState({IP:false,RP:false,Cl:false,Sup:false})
@@ -57,10 +58,13 @@ const Navbar=()=>
                 </div>
             </div>
             <div>
-                <button onMouseEnter={()=>sethoverstate({IP:false,RP:false,Cl:false,Sup:false})}><Link to="/login">{logindata&&logindata.isAuth?logindata.name:"Sign In"}</Link></button>
+                <button onMouseEnter={()=>sethoverstate({IP:false,RP:false,Cl:false,Sup:false})}><Link to="/login">{name?name:"Sign In"}</Link></button>
             </div>
             <div>
-                <button onClick={()=>{logoutAction(dispatch)}}
+                <button disabled={name?false:true} onClick={()=>{
+                    localStorage.removeItem("authtoken")
+                    localStorage.removeItem("name")
+                }}
                  onMouseEnter={()=>sethoverstate({IP:false,RP:false,Cl:false,Sup:false})}>Sign out</button>
             </div>
         </div>

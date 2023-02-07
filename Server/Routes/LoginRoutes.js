@@ -3,7 +3,14 @@ const express=require("express")
 const LoginModel = require("../Models/Login")
 const app=express()
 const axios=require("axios")
+const jwt=require("jsonwebtoken")
+const env=require("dotenv")
+env.config({
+    path:"../.env"
+})
+
 const loginrouter=express.Router()
+const secret=process.env.SECRET
 loginrouter.post("/api/otpregister",async(req,res)=>
 {
     var options = {
@@ -37,7 +44,6 @@ loginrouter.post("/api/register",async(req,res)=>
         {
             return res.send({message:"The user has already registered.. Please login to continue.."})
         }
-        console.log(data)
         bcrypt.hash(data.password,10,async(err,hash)=>
         {
             console.log(hash)
@@ -46,7 +52,6 @@ loginrouter.post("/api/register",async(req,res)=>
                 email:data.email,
                 password:hash
             })
-            
             res.send({
                 message:"Successfull SignUp"
             })
@@ -55,6 +60,40 @@ loginrouter.post("/api/register",async(req,res)=>
         return res.status(400).send({
            message: error
         })
+    }
+})
+
+loginrouter.post("/api/login",async(req,res)=>
+{
+    try {
+        const data=req.body
+        let usersdata=await LoginModel.find({email:data.email})
+        if(usersdata.length>0)
+        {
+            bcrypt.compare(data.password,usersdata[0].password, function(err,result)
+            {
+                if(result)
+                {
+                    let{name,email,_id}=usersdata[0]
+                    const token=jwt.sign({name,email,_id},secret)
+                    return res.send({
+                        token:token,
+                        name:name,
+                        message:"The user has successfully loggedin"
+                    })
+                }
+                else
+                {
+                    return res.status(400).send("Incorrect password")
+                }
+            })
+        }
+        else
+        {
+            return res.status(400).send("The user has not registered")
+        }
+    } catch (error) {
+        
     }
 })
 
