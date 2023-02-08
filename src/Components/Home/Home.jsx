@@ -87,7 +87,7 @@ const HomePage = () => {
                   </div>
                 </div>
               </div>
-            <div>
+            <div style={{padding:"10px"}}>
               <img
                 src="https://static.pbcdn.in/cdn/images/home/banner_savetax.png?v=1"
                 alt="aksh"
@@ -378,7 +378,7 @@ const HomePage = () => {
       </div>
       <div style={{ width: "80%", marginLeft: "15%" }}>
         <Grid marginTop="30px" container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-          <Grid item xs={2.2}>
+          <Grid item xs={12} sm={4}>
             <Item
               style={{ height: "200px", alignItems: "center" }}
               className="home-de"
@@ -400,7 +400,7 @@ const HomePage = () => {
               <p style={{ marginTop: "0px" }}>Guaranteed</p>
             </Item>
           </Grid>
-          <Grid item xs={2.2}>
+          <Grid item xs={12} sm={4}>
             <Item
               style={{ height: "200px", alignItems: "center" }}
               className="home-de"
@@ -422,7 +422,7 @@ const HomePage = () => {
               <p style={{ marginTop: "0px" }}>Keeping customers first.</p>
             </Item>
           </Grid>
-          <Grid item xs={2.2}>
+          <Grid item xs={12} sm={4}>
             <Item
               style={{ height: "200px", alignItems: "center" }}
               className="home-de"
@@ -444,7 +444,7 @@ const HomePage = () => {
               <p style={{ marginTop: "0px" }}>Regulated by IRDAI</p>
             </Item>
           </Grid>
-          <Grid item xs={2.2}>
+          <Grid item xs={12} sm={4}>
             <Item
               style={{ height: "200px", alignItems: "center" }}
               className="home-de"
@@ -466,7 +466,7 @@ const HomePage = () => {
               <p style={{ marginTop: "0px" }}>Made Stress-free</p>
             </Item>
           </Grid>
-          <Grid item xs={2.2}>
+          <Grid item xs={12} sm={4}>
             <Item
               style={{ height: "200px", alignItems: "center" }}
               className="home-de"

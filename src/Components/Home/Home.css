@@ -26,8 +26,6 @@
 }
 
 .home-img2 {
-  top: 90px;
-  height: 233.15px;
   width: 100%;
 }
 .home-pro {
@@ -263,7 +261,9 @@
 }
 .home-ma-pat {
   width: 96%;
+  margin:auto;
   margin-bottom: 2%;
+  margin-top: 30px;
   padding: 2%;
   background: #f0f6ff;
 }
@@ -492,7 +492,7 @@
   }
 }
 
-@media screen and (max-width: 450px)
+@media screen and (max-width: 470px)
 {
   .home-maind 
   {
