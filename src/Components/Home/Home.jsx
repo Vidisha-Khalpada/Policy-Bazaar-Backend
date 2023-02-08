@@ -54,6 +54,7 @@ import k9 from "../../assets/images/k9.png";
 import k0 from "../../assets/images/k0.png";
 import invest1 from "../../assets/images/invest1.png";
 import invest2 from "../../assets/images/invest2.png";
+import { width } from "@mui/system";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -70,35 +71,34 @@ const HomePage = () => {
       <div className="home-main">
         <div className="home-total">
           <div className="home-head">
-            <p>
-              Let's find you <br />
-              the <b>Best Insurance</b>
-            </p>
-          </div>
-
-          <div>
-            <img
-              src="https://static.pbcdn.in/cdn/images/home/banner_savetax.png?v=1"
-              alt="aksh"
-              className="home-img2"
-            />
-          </div>
-
-          <div style={{ display: "flex", flexDirection: "row",marginTop:"20px",gap:"40px"}}>
-              <div style={{display:"flex",gap:"20px", alignItems:"center"}}>
-              <img className="home-img0" src={thunder} alt="thunder" />
-              <p className="home-cont1">
-                50+ insurers with one of the best prices{" "}
-              </p>
+              <div>
+                <p>
+                  Let's find you <br />
+                  the <b>Best Insurance</b>
+                </p>
+                <div id="top-d1">
+                  <div style={{display:"flex",gap:"20px", alignItems:"center"}}>
+                    <img className="home-img0" src={thunder} alt="thunder" />
+                    <p className="home-cont1">50+ insurers with one of the best prices{" "}</p>
+                  </div>
+                  <div style={{display:"flex",gap:"20px", alignItems:"center"}}>
+                    <img className="home-img" src={thunder1} alt="thunder" />
+                    <p className="home-cont2">Quick, easy & hassle free</p>
+                  </div>
+                </div>
               </div>
+            <div>
+              <img
+                src="https://static.pbcdn.in/cdn/images/home/banner_savetax.png?v=1"
+                alt="aksh"
+                className="home-img2"/>
+            </div>
 
-              <div style={{display:"flex",gap:"20px", alignItems:"center"}}>
-              
-                <img className="home-img" src={thunder1} alt="thunder" />
-                <p className="home-cont2">Quick, easy & hassle free</p>
-              
-              </div>
           </div>
+
+          
+
+          
 
           <div className="home-maind">
             <div className="home-tol">
@@ -280,14 +280,11 @@ const HomePage = () => {
           <Carousel />
         </div>
       </div>
-      <div>
-        <img style={{ float: "left" }} src={left} alt="left-bg" />
+      <div id="home-d">
         <p
           style={{
-            position: "absolute",
             marginTop: "8%",
             fontSize: "36px",
-            marginLeft: "12%",
             color: "#253858",
           }}
         >
@@ -296,93 +293,78 @@ const HomePage = () => {
           <b> best place</b> to buy<br></br>
           <b> insurance</b> in India?
         </p>
-        <img style={{ float: "right" }} src={right} alt="left-bg" />
-
-        <div className="home-d1">
-          <div className="home-l" style={{ backgroundColor: "#0550C7" }}></div>
-          <img src={part} alt="party" />
-          <p>
-            <b
-              style={{
-                color: "#0550C7",
-                position: "absolute",
-                marginBottom: "13px",
-              }}
-            >
-              Over 9 million
-            </b>
-          </p>
-          <p className="home-d-text">
-            Customers trust us & have bought their insurance on Policy bazaar
-          </p>
-        </div>
-        <div className="home-d2">
-          <div className="home-l" style={{ backgroundColor: "#3AC2F3" }}></div>
-          <img src={sear1} alt="party" />
-          <p>
-            <b
-              style={{
-                color: "#3AC2F3",
-                position: "absolute",
-                marginBottom: "13px",
-              }}
-            >
-              50+ insurers
-            </b>
-          </p>
-          <p className="home-d-text">
-            partnered with us so that you can compare easily & transparentlyr
-          </p>
-        </div>
-        <div className="home-d3">
-          <div className="home-l" style={{ backgroundColor: "#57CD1D" }}></div>
-          <img src={sear2} alt="party" />
-          <p>
-            <b
-              style={{
-                color: "#57CD1D",
-                position: "absolute",
-                marginBottom: "13px",
-              }}
-            >
-              The Best Price
-            </b>
-          </p>
-          <p className="home-d-text">
-            for all insurance plans available online
-          </p>
-        </div>
-        <div className="home-d4">
-          <div className="home-l" style={{ backgroundColor: "#FFB62C" }}></div>
-          <img src={sear3} alt="party" />
-          <p>
-            <b
-              style={{
-                color: "#FFB62C",
-                position: "absolute",
-                marginBottom: "13px",
-              }}
-            >
-              Claims
-            </b>
-          </p>
-          <p className="home-d-text">
-            support built in with every policy for help, when you need it the
-            mostr
-          </p>
+        <div id="home-data">
+          <div className="home-d1">
+            <div className="home-l" >
+              <img src={part} alt="party" />
+              <p style={{
+                    color: "#0550C7",
+                    fontWeight:"bold",
+                  }}>
+                  Over 9 million
+              </p>
+              <p className="home-d-text">
+                Customers trust us & have bought their insurance on Policy bazaar
+              </p>
+            </div>
+          </div>
+          <div className="home-d2">
+            <div className="home-l">
+              <img src={sear1} alt="party" />
+              <p style={{
+                    color: "#3AC2F3",
+                    fontWeight:"bold",
+                  }}>
+                  50+ insurers
+              </p>
+              <p className="home-d-text">
+                Partnered with us so that you can compare easily & transparentlyr
+              </p>
+            </div>
+          </div>
+          <div className="home-d3">
+            <div className="home-l" >
+              <img src={sear2} alt="party" />
+              <p style={{
+                    color: "#57CD1D",
+                    marginBottom: "13px",
+                  }}>
+                  The Best Price
+              </p>
+              <p className="home-d-text">
+                For all insurance plans available online
+              </p>
+            </div>
+          </div>
+          <div className="home-d4">
+            <div className="home-l">
+              <img src={sear3} alt="party" />
+              <p style={{
+                    color: "#FFB62C",
+                    marginBottom: "13px",
+                  }}>
+                  Claims
+              </p>
+              <p className="home-d-text">
+                Support built in with every policy for help, when you need it the
+                most
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       <div
         style={{
-          marginTop: "45%",
+          marginTop:"40px",
           marginLeft: "12%",
           fontFamily:
             "Roboto,-apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,sans-serif",
         }}
       >
         <h1>PB Advantage</h1>
+        <hr style={{width:"50%", marginTop:"10px",backgroundColor:"#0663f6", height:"6px"}} />
         <div className="home-hl"></div>
-        <p className="home-hp">
+        <p className="home-hp" style={{lineHeight:"40px"}}>
           When you buy insurance from us, you get more than just financial
           safety. You also get: our promise of simplifying complex insurance
           terms and conditions, quick stress-free claims, instant quotes from
@@ -395,7 +377,7 @@ const HomePage = () => {
         </p>
       </div>
       <div style={{ width: "80%", marginLeft: "15%" }}>
-        <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <Grid marginTop="30px" container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
           <Grid item xs={2.2}>
             <Item
               style={{ height: "200px", alignItems: "center" }}
@@ -508,25 +490,18 @@ const HomePage = () => {
           </Grid>
         </Grid>
       </div>
-      <div
-        style={{
-          backgroundColor: "#F0F6FF",
-          width: "100%",
-          height: "543px",
-          marginTop: "5%",
-        }}
-      >
-        <img
-          style={{ float: "right", marginRight: "15%", marginTop: "5%" }}
-          src={bigp}
-          alt="phone"
-        />
+      
+        
         <div
           style={{
-            marginLeft: "13%",
-            position: "absolute",
+           
+            backgroundColor: "#F0F6FF",
             fontFamily:
               "Roboto,-apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,sans-serif",
+              padding:"20px",
+              width:"70%",
+              margin:"auto",
+              marginLeft: "13%",
           }}
         >
           <h1
@@ -534,69 +509,53 @@ const HomePage = () => {
               fontWeight: "500",
               fontFamily:
                 "Roboto,-apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,sans-serif",
-              lineHeight: "114%",
+              marginTop:"20px",
             }}
           >
             Get the Policybazaar app
           </h1>
-          <div className="home-hl"></div>
-          <p style={{ color: "#253858", fontSize: "18px" }}>
-            Get control of all your insurance needs anywhere, anytime
-          </p>
+          <hr style={{width:"50%", marginTop:"10px",backgroundColor:"#0663f6", height:"6px"}} />
+          <div className="home-hl">
+            <div>
+              <p>
+                Get control of all your insurance needs anywhere, anytime
+              </p>
 
-          <p style={{ position: "absolute", top: "100%", left: "0%" }}>
-            {" "}
-            <img src={star} alt="star" /> Compare different insurance policies
-          </p>
-          <p style={{ position: "absolute", top: "130%", left: "0%" }}>
-            <img src={star} alt="star" /> Buy, store and share all your policies
-            online
-          </p>
-          <p style={{ position: "absolute", top: "160%", left: "0%" }}>
-            <img src={star} alt="star" /> Track your policy status on the go
-          </p>
-          <p style={{ position: "absolute", top: "190%", left: "0%" }}>
-            <img src={star} alt="star" /> Download your policy with a single tap
-          </p>
-          <p
-            style={{
-              position: "absolute",
-              top: "225%",
-              left: "0%",
-              color: "#253858",
-            }}
-          >
-            Download our app from
-          </p>
-          <div
-            style={{
-              position: "absolute",
-              top: "265%",
-              left: "0%",
-              display: "flex",
-              flexDirection: "row",
-            }}
-          >
-            <img src={Ap2} alt="app" style={{ marginRight: "7%" }} />
+              <p>
+                {" "}
+                <img src={star} alt="star" /> Compare different insurance policies
+              </p>
+              <p>
+                <img src={star} alt="star" /> Buy, store and share all your policies
+                online
+              </p>
+              <p >
+                <img src={star} alt="star" /> Track your policy status on the go
+              </p>
+              <p>
+                <img src={star} alt="star" /> Download your policy with a single tap
+              </p>
+              <p>
+                Download our app from
+              </p>
 
-            <img src={Ap1} alt="app" />
+              <div id="getapp"
+                
+              >
+                <img src={Ap2} alt="app"/>
+                <img src={Ap1} alt="app" />
+              </div>
+              
+            </div>
+            <img src={bigp} alt="phone" width="50%"/>
           </div>
+
+
         </div>
-      </div>
       <div className="home-ma-pat">
         <p className="home-pat">Our Partners</p>
         <p className="home-pat1">Leading insurers for your financial freedom</p>
-        <div
-          style={{
-            width: "70%",
-            marginLeft: "15%",
-            marginRight: "15%",
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            gap: "20px",
-          }}
-        >
+        <div id="home-pat2">
           <div className="home-ob">
             <img style={{ width: "90px" }} src={o1} alt="one" />
           </div>
@@ -618,20 +577,7 @@ const HomePage = () => {
           <div className="home-ob">
             <img style={{ width: "90px" }} src={o7} alt="one" />
           </div>
-        </div>
-
-        <div
-          style={{
-            width: "70%",
-            marginLeft: "15%",
-            marginTop: "2%",
-            marginRight: "15%",
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            gap: "20px",
-          }}
-        >
+       
           <div className="home-ob">
             <img style={{ width: "90px" }} src={o8} alt="one" />
           </div>
@@ -655,19 +601,7 @@ const HomePage = () => {
           <div className="home-ob">
             <img style={{ width: "90px" }} src={o5} alt="one" />
           </div>
-        </div>
-        <div
-          style={{
-            width: "70%",
-            marginLeft: "15%",
-            marginTop: "2%",
-            marginRight: "15%",
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            gap: "20px",
-          }}
-        >
+        
           <div className="home-ob">
             <img style={{ width: "90px" }} src={k1} alt="one" />
           </div>
@@ -691,19 +625,7 @@ const HomePage = () => {
           <div className="home-ob">
             <img style={{ width: "90px" }} src={k5} alt="one" />
           </div>
-        </div>
-        <div
-          style={{
-            width: "70%",
-            marginLeft: "15%",
-            marginTop: "2%",
-            marginRight: "15%",
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            gap: "20px",
-          }}
-        >
+        
           <div className="home-ob">
             <img style={{ width: "90px" }} src={k7} alt="one" />
           </div>
@@ -727,19 +649,7 @@ const HomePage = () => {
           <div className="home-ob">
             <img style={{ width: "90px" }} src={k4} alt="one" />
           </div>
-        </div>
-        <div
-          style={{
-            width: "70%",
-            marginLeft: "15%",
-            marginTop: "2%",
-            marginRight: "15%",
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            gap: "20px",
-          }}
-        >
+        
           <div className="home-ob">
             <img style={{ width: "90px" }} src={k2} alt="one" />
           </div>
@@ -763,19 +673,7 @@ const HomePage = () => {
           <div className="home-ob">
             <img style={{ width: "90px" }} src={k4} alt="one" />
           </div>
-        </div>
-        <div
-          style={{
-            width: "70%",
-            marginLeft: "15%",
-            marginTop: "2%",
-            marginRight: "15%",
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            gap: "20px",
-          }}
-        >
+        
           <div className="home-ob">
             <img style={{ width: "90px" }} src={o3} alt="one" />
           </div>
@@ -799,19 +697,7 @@ const HomePage = () => {
           <div className="home-ob">
             <img style={{ width: "90px" }} src={o0} alt="one" />
           </div>
-        </div>
-        <div
-          style={{
-            width: "70%",
-            marginLeft: "15%",
-            marginTop: "2%",
-            marginRight: "15%",
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            gap: "20px",
-          }}
-        >
+        
           <div className="home-ob">
             <img style={{ width: "90px" }} src={k7} alt="one" />
           </div>
@@ -847,7 +733,7 @@ const HomePage = () => {
               "Roboto,-apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,sans-serif",
           }}
         >
-          <h1>Investors</h1>
+          <h1 style={{paddingTop:"15px"}}>Investors</h1>
           <div className="home-hl"></div>
 
           <br />
@@ -864,69 +750,71 @@ const HomePage = () => {
           >
             <div
               style={{
-                width: "300px",
-                height: "100px",
                 backgroundColor: "white",
                 borderRadius: "4px",
-                paddingTop: "30px",
-                paddingLeft: "40px",
-                paddingRight: "40px",
+                display:"flex",
+                alignItems:"center",
+                padding:"10px"
               }}
             >
-              <img src={invest1} alt="inv" />
+              <img src={invest1}  alt="inv" />
             </div>
             <div
               style={{
-                width: "200px",
-                height: "100px",
                 backgroundColor: "white",
                 borderRadius: "4px",
-                paddingTop: "35px",
-                paddingLeft: "40px",
-                paddingRight: "40px",
+                display:"flex",
+                alignItems:"center",
+                padding:"10px"
               }}
             >
               <img src={invest2} alt="inv" />
             </div>
             <div
               style={{
-                width: "200px",
-                height: "100px",
                 backgroundColor: "white",
                 borderRadius: "4px",
-                paddingTop: "30px",
-                paddingLeft: "40px",
-                paddingRight: "40px",
+                display:"flex",
+                alignItems:"center",
+                padding:"10px"
               }}
             >
-              <img src={invest1} alt="inv" />
+              <img width="100%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Logo_of_Temasek_Holdings.svg/2560px-Logo_of_Temasek_Holdings.svg.png" alt="inv" />
             </div>
             <div
               style={{
-                width: "200px",
-                height: "100px",
                 backgroundColor: "white",
                 borderRadius: "4px",
-                paddingTop: "35px",
-                paddingLeft: "40px",
-                paddingRight: "40px",
+                display:"flex",
+                alignItems:"center",
+                padding:"10px"
               }}
             >
-              <img src={invest2} alt="inv" />
+              <img width="100%" src="https://mms.businesswire.com/media/20200617005872/en/799306/23/SoftBank-Logo.jpg" alt="inv" />
             </div>
             <div
               style={{
-                width: "200px",
-                height: "100px",
                 backgroundColor: "white",
                 borderRadius: "4px",
-                paddingTop: "35px",
-                paddingLeft: "40px",
-                paddingRight: "40px",
+                display:"flex",
+                alignItems:"center",
+                padding:"10px"
               }}
             >
-              <img src={invest2} alt="inv" />
+              <img width="100%" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Tiger_Global.png" alt="inv" />
             </div>
+            <div
+              style={{
+                backgroundColor: "white",
+                borderRadius: "4px",
+                display:"flex",
+                alignItems:"center",
+                padding:"10px"
+              }}
+            >
+              <img width="100%" src="https://mma.prnewswire.com/media/1812566/Alphawave_IP_Group_Plc_Alphawave%20Launches_US_Presence_with_New_S.jpg?p=facebook" alt="inv" />
+            </div>
+
           </div>
         </div>
       </div>

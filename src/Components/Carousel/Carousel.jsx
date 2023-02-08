@@ -44,16 +44,15 @@ const Carosuel = () => {
         containerClass="carousel-container"
         removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
         itemClass="carousel-item-padding-40-px"
-        
       >
         <div
           style={{
             backgroundColor:"#7080FA",
             borderRadius:"15px",
             marginRight:"20px",
-            height:"200px"
+            height:"250px"
           }}>
-          <div style={{display:"flex",alignItems:"center",paddingTop:"40px",justifyContent:"space-around"}}>
+          <div  style={{display:"flex",alignItems:"center",paddingTop:"40px",justifyContent:"space-around"}}>
             <div>
               <img
               style={{ width:"25%", marginLeft:"10px" }}
@@ -94,7 +93,7 @@ const Carosuel = () => {
             backgroundColor:"rgb(79,220,149)",
             borderRadius:"15px",
             marginRight:"20px",
-            height:"200px"
+            height:"250px"
           }}>
           <div style={{display:"flex",alignItems:"center",paddingTop:"40px",justifyContent:"space-around"}}>
             <div>
@@ -138,7 +137,7 @@ const Carosuel = () => {
             backgroundColor:"rgb(60,187,218)",
             borderRadius:"15px",
             marginRight:"20px",
-            height:"200px"
+            height:"250px"
           }}>
           <div style={{display:"flex",alignItems:"center",paddingTop:"40px",justifyContent:"space-around"}}>
             <div>
@@ -179,49 +178,7 @@ const Carosuel = () => {
         </div>
 
 
-        <div
-          style={{
-            backgroundColor:"#FF9898",
-            borderRadius:"15px",
-            marginRight:"20px",
-            height:"200px"
-          }}>
-          <div style={{display:"flex",alignItems:"center",paddingTop:"40px",justifyContent:"space-around"}}>
-            <div>
-              <img
-              style={{ width:"70%", marginLeft:"10px" }}
-              src={hert}
-              alt="heart"
-            />
-            <p
-              style={{
-                color: "white",
-                fontSize: "15px",
-                fontWeight: "500",
-                marginLeft: "10%",
-              }}
-            >
-              AskPB
-            </p>
-            </div>
-              <img
-              src={virs}
-              alt="virus" />
-          </div>
-          <p
-            style={{
-              marginTop: "20px",
-              fontSize: "22px",
-              color: "white",
-              fontWeight: "500",
-              marginLeft: "5%",
-              fontFamily: "Roboto",
-              paddingBottom:"20px"
-            }}
-          >
-             Got a <strong>question about insurance?</strong> Write to us
-          </p>
-        </div>
+        
 
 
         
