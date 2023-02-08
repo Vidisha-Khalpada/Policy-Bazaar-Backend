@@ -13,7 +13,6 @@ export const Family = () => {
     <>
     <div className='family_main'>
         <Family_left />
-        {/* <Family_right /> */}
         {/* <Page2 /> */}
         {/* <Page3 /> */}
         {/* <Page4 /> */}

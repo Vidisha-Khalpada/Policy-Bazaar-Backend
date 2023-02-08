@@ -101,6 +101,10 @@
         display: grid;
         grid-template-columns: repeat(2,1fr);
     }
+    #footercont
+    {
+        width: 100%;
+    }
 }
 @media screen and (max-width: 450px) {
     #footerinsurance
@@ -124,6 +128,10 @@
     {
        display: grid;
         grid-template-columns: repeat(1,1fr);
+    }
+    #footercont
+    {
+        width: 100%;
     }
 }
 

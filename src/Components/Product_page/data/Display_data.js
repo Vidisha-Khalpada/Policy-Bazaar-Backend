@@ -119,7 +119,7 @@ export const Display_data = () => {
             })}
             </tbody>
         </table>
-        <div>
+        <div id='extratext'>
             <div>
                 <ul>Why buy from Policybazaar?
                     <ol>Dedicated Claim Assistance</ol>
