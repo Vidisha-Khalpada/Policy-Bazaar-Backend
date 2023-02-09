@@ -65,4 +65,16 @@ router.post("/addinsurance",authenticate,async(req,res)=>
     }
 })
 
+router.get("/individualinsurance",authenticate,async(req,res)=>
+{
+    try {
+        let userres=await UserInsuranceModel.find({userid:req.body.userid})
+        return res.send({
+            data:userres
+        })
+    } catch (error) {
+        res.status(400).send(error)
+    }
+})
+
 module.exports=router
