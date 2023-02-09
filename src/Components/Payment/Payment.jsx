@@ -133,11 +133,12 @@ const Payment = () => {
     dispatch(total_amt(total_price));
 
     //use navigate render new page
-    navigate("/checkout");
+    navigate(`/checkout/${clim_settled}`);
   };
 
   return (
     <div className="paymentPage-top-container">
+      <div className="middleman">
       <div className="paymentpage-container">
         <div className="care-image-div">
           <div className="care-image">
@@ -299,12 +300,16 @@ const Payment = () => {
                   src="https://static.pbcdn.in/health-cdn/images/insurer-logo/Care_Health@2x.webp"
                   alt=""
                 />
-                <h5 className="enhance-div-heading">Enhance</h5>
+                
               </div>
+              <h5 className="enhance-div-heading">Enhance</h5>
                 <table className="myTable" cellSpacing={15} style ={{height:'5vh'}}>
+                
                   <thead>
-                    <th>Cover</th>
-                    <th>Member(s)</th>
+                    <tr>
+                      <th>Cover</th>
+                      <th>Member(s)</th>
+                    </tr>
                   </thead>
                   <tbody className="enhance-table-tbody">
                     <td>
@@ -339,13 +344,13 @@ const Payment = () => {
             </div>
           </div>
           <p id="para-deductible">Deductible : 7L</p>
-          <div className="member-covered">
+          {/* <div className="member-covered">
             <h3>Members Covered</h3>
             <div id="members-2">
               <p>name(22)</p>
               <p style={{ color: "orange" }}>Edit Members</p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -452,11 +457,11 @@ const Payment = () => {
           PROCEED TO PROPOSAL
         </button>
       </div>
-
+    </div>
       <div className="payment-footer">
         <div className="payment-footer-1">
           <h2>Need Help? We’re just one click away</h2>
-          <button className="footer-para-button">Call Me Now</button>
+          {/* <button className="footer-para-button">Call Me Now</button> */}
         </div>
         <div className="footer-payment-para">
           <hr />

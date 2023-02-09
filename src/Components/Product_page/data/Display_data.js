@@ -1,5 +1,5 @@
 import { Table, Thead } from '@chakra-ui/react'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Display_single_page } from './Display_single_page'
 import hdfc from "./HDFC_Life_logo.webp"
 import icici from "./ICICI_logo.webp"
@@ -9,6 +9,8 @@ import "./Display.css"
 import { useSelector } from 'react-redux'
 
 export const Display_data = () => {
+    const url=process.env.REACT_APP_URL
+    
     let monthly = React.useRef(null)
   let yearly = React.useRef(null)
    
@@ -18,13 +20,20 @@ export const Display_data = () => {
     let ref_age = React.useRef(null)
     let ref_claim = React.useRef(null)
     const[data2,setData2] = React.useState(logo);
+    useEffect(()=>
+    {
+        let f=async()=>
+        {
+            let res=await fetch(`${url}/allinsurance`)
+            let data=await res.json()
+            setData2(data.data)
+        }
+        f()
+    },[])
+
     function Handle_Cover(el){
-        if(ref_Cov.current.value==""){
-            setData2(logo)
-        }else{
         let g = logo.filter((e)=>(e.life_cover==ref_Cov.current.value))
         setData2(g)
-        }
     }
     function Handle_claim(el){
         if(ref_claim.current.value==""){

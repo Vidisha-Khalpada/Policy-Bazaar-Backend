@@ -6,11 +6,13 @@ tr{
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     line-height: 2.0;
+    vertical-align: middle;
 }
 .maxage{
     display: grid;
     align-content: center;
     text-align: center;
+   
 }
 table{
     width: 70%;

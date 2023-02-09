@@ -11,9 +11,9 @@ import { Page3 } from "../Product_page/Page_3/Page3";
 import { Page4 } from "../Product_page/Page_4/Page4";
 import { Family_right } from "../Product_page/Family_page/Family_right";
 import { Display_data } from "../Product_page/data/Display_data";
-import { Family } from "../Product_page/Family_page/Family";
 import ErrorPage from "../Login/LoginComp/ErrorPage";
-import PrivateRoute from "../Login/LoginComp/PrivateRoute";
+import PrivateRoute from "./PrivateRoute";
+import Account from "../Support/Account";
 
 const AllRoutes = () => {
   return (
@@ -25,7 +25,7 @@ const AllRoutes = () => {
         <Route path="/lifeinsurance">
           <Route path="term-insurance">
             {Data.TermInsurance.map((ele) => {
-              return <Route path={ele.path} element={ele.element} />;
+              return <Route path={ele.path} element={<PrivateRoute>{ele.element}</PrivateRoute>}/>;
             })}
           </Route>
           <Route path="other-insurance">
@@ -40,7 +40,7 @@ const AllRoutes = () => {
           </Route>
           <Route path="health-insurance">
             {Data.HealthInsurance.map((ele) => {
-              return <Route path={ele.path} element={ele.element} >
+              return <Route path={ele.path} element={<PrivateRoute>{ele.element}</PrivateRoute>} >
                 <Route path="" element={<Navigate to="family-health-insurance"/>}/>
                 <Route path='family-health-insurance' element={<Family_right />} />
           <Route path="age" element={<Page2 />} />
@@ -79,7 +79,7 @@ const AllRoutes = () => {
         </Route>
         <Route path="/support">
           <Route path="account">
-            <Route path="policies" />
+            <Route path="policies" element={<PrivateRoute><Account/></PrivateRoute>}/>
             <Route path="get-help" />
             <Route path="communication-preferences" />
             <Route path="advisor" />
@@ -99,7 +99,7 @@ const AllRoutes = () => {
             </ChakraProvider>
           }
         ></Route>
-        <Route path="/checkout" element={<FinalCheckout />} />
+        <Route path="/checkout/:clim_settled" element={<FinalCheckout />} />
         <Route path="otp" element={<OTP></OTP>} />
         <Route path={`/lifeinsurance/health-insurance/payment/:clim_settled`} element={<Payment />} />
         <Route path="*" element={<ErrorPage/>}/>

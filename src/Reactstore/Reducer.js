@@ -21,12 +21,12 @@ let data = {
 },
   Term_Life_Insurance: [
     {
-      insurer: { image: hdfc, name: "HDFC Life" },
-      life_cover: "50",
-      cover_till_age: { max_age: "60", max_limit: "99", cover_term: "33" },
-      premium: "599",
-      clim_settled: 97.1,
-      offers: [
+      "insurer": { "image": hdfc, "name": "HDFC Life" },
+      "life_cover": "50",
+      "cover_till_age": { "max_age": "60", "max_limit": "99", "cover_term": "33" },
+      "premium": "599",
+      "clim_settled": 97.1,
+      "offers": [
         "Waiver of Premium Cover",
         "100% payout on Terminal illness",
         "Extra Payout on Accidental death",
@@ -34,12 +34,12 @@ let data = {
       ],
     },
     {
-      insurer: { image: icici, name: "ICICI" },
-      life_cover: "55",
-      cover_till_age: { max_age: "70", max_limit: "99", cover_term: "33" },
-      premium: "899",
-      clim_settled: 98.2,
-      offers: [
+      "insurer": { "image": icici," name": "ICICI" },
+      "life_cover": "55",
+      "cover_till_age": { "max_age": "70", "max_limit": "99", "cover_term": "33" },
+      "premium": "899",
+      "clim_settled": 98.2,
+      "offers": [
         "Waiver of Premium Cover",
         "100% payout on Terminal illness",
         "Extra Payout on Accidental death",
@@ -47,12 +47,12 @@ let data = {
       ],
     },
     {
-      insurer: { image: max, name: "MAX Life" },
-      life_cover: "50",
-      cover_till_age: { max_age: "60", max_limit: "99", cover_term: "33" },
-      premium: "455",
-      clim_settled: 96.3,
-      offers: [
+      "insurer": { "image": max, "name": "MAX Life" },
+      "life_cover": "50",
+      "cover_till_age": { "max_age": "60", "max_limit": "99", "cover_term": "33" },
+      "premium": "455",
+      "clim_settled": 96.3,
+      "offers": [
         "Waiver of Premium Cover",
         "100% payout on Terminal illness",
         "Extra Payout on Accidental death",
@@ -60,12 +60,12 @@ let data = {
       ],
     },
     {
-      insurer: { image: tata, name: "TATA AIA" },
-      life_cover: "60",
-      cover_till_age: { max_age: "70", max_limit: "99", cover_term: "33" },
-      premium: "698",
-      clim_settled: 99.4,
-      offers: [
+      "insurer": { "image": tata, "name": "TATA AIA" },
+      "life_cover": "60",
+      "cover_till_age": { "max_age": "70", "max_limit": "99", "cover_term": "33" },
+      "premium": "698",
+      "clim_settled": 99.4,
+      "offers": [
         "Waiver of Premium Cover",
         "100% payout on Terminal illness",
         "Extra Payout on Accidental death",
@@ -73,12 +73,12 @@ let data = {
       ],
     },
     {
-      insurer: { image: hdfc, name: "HDFC Life" },
-      life_cover: "50",
-      cover_till_age: { max_age: "80", max_limit: "99", cover_term: "33" },
-      premium: "599",
-      clim_settled: 97.5,
-      offers: [
+      "insurer": { "image": hdfc, "name": "HDFC Life" },
+      "life_cover": "50",
+      "cover_till_age": { "max_age": "80", "max_limit": "99", "cover_term": "33" },
+      "premium": "599",
+      "clim_settled": 97.5,
+      "offers": [
         "Waiver of Premium Cover",
         "100% payout on Terminal illness",
         "Extra Payout on Accidental death",
@@ -86,12 +86,12 @@ let data = {
       ],
     },
     {
-      insurer: { image: icici, name: "ICICI" },
-      life_cover: "55",
-      cover_till_age: { max_age: "80", max_limit: "99", cover_term: "33" },
-      premium: "899",
-      clim_settled: 98.6,
-      offers: [
+      "insurer": { "image": icici,"name": "ICICI" },
+      "life_cover": "55",
+      "cover_till_age": { "max_age": "80", "max_limit": "99", "cover_term": "33" },
+      "premium": "899",
+      "clim_settled": 98.6,
+      "offers": [
         "Waiver of Premium Cover",
         "100% payout on Terminal illness",
         "Extra Payout on Accidental death",
@@ -99,12 +99,12 @@ let data = {
       ],
     },
     {
-      insurer: { image: max, name: "MAX Life" },
-      life_cover: "70",
-      cover_till_age: { max_age: "90", max_limit: "99", cover_term: "33" },
-      premium: "455",
-      clim_settled: 96.7,
-      offers: [
+      "insurer": { "image": max, "name": "MAX Life" },
+      "life_cover": "70",
+      "cover_till_age": { "max_age": "90", "max_limit": "99", "cover_term": "33" },
+      "premium": "455",
+      "clim_settled": 96.7,
+      "offers": [
         "Waiver of Premium Cover",
         "100% payout on Terminal illness",
         "Extra Payout on Accidental death",
@@ -112,12 +112,12 @@ let data = {
       ],
     },
     {
-      insurer: { image: tata, name: "TATA AIA" },
-      life_cover: "60",
-      cover_till_age: { max_age: "90", max_limit: "99", cover_term: "33" },
-      premium: "698",
-      clim_settled: 99.8,
-      offers: [
+      "insurer": { "image": tata, "name": "TATA AIA" },
+      "life_cover": "60",
+      "cover_till_age": { "max_age": "90", "max_limit": "99", "cover_term": "33" },
+      "premium": "698",
+      "clim_settled": 99.8,
+      "offers": [
         "Waiver of Premium Cover",
         "100% payout on Terminal illness",
         "Extra Payout on Accidental death",

@@ -1,12 +1,32 @@
-import { useState } from "react"
-import { Navigate } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { Navigate, useParams } from "react-router-dom"
 import "./Checkout.css"
 import Credit from "./Credit"
 import Debit from "./Debit"
 import { useNavigate } from "react-router-dom"
+import axios from "axios"
 const FinalCheckout=()=>
 {
     const[card,setcard]=useState({debit:true,credit:false})
+    const {clim_settled}=useParams()
+    const url=process.env.REACT_APP_URL
+    let token=localStorage.getItem("authtoken")
+    useEffect(()=>
+    {
+        axios.get(`${url}/allinsurance`).then((res)=>
+        {
+            console.log(res.data.data)
+            let arr=res.data.data.filter((ele)=>
+            {
+                return ele.clim_settled==clim_settled
+            })
+            axios.post(`${url}/addinsurance`,arr[0],{
+                headers:{
+                    "Authorization":token
+                }
+            })
+        })
+    },[])
     const navigate=useNavigate()
     return(
         <div id="fcmaincont" style={{marginBottom:"20px"}}>
@@ -49,7 +69,6 @@ const FinalCheckout=()=>
                 <div style={{margin:"auto",width:"60%"}}>
                 <button onClick={()=>
                 {
-                    console.log("Hi")
                     navigate("/otp")
                 }}>Proceed To Pay</button>
                 </div>
