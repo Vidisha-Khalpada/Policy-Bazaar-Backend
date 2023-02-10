@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+<h2>Policy Bazaar</h2> 
+<h5>
+Policy Bazaar is a website where users can purchase policies and insurances related to health, car, and several other amenities.<br/> 
+This project is a clone of Policy Bazaar being a collaborative effort by a team of 5 Full Stack Web Developers and executed in a week.<br/><br/>
+ The Website Clone: https://policy-bazaar-fullstack.vercel.app/<br/><br/>
+ The Deployed Server: https://long-erin-hippo-sock.cyclic.app<br/><br/>
+  <ins>The Features Developed: </ins>
+ <ul>
+   <li>Home Page,</li>
+   <li>User Signup and Login,</li>
+   <li>UserDetails Form,</li>
+   <li>Policies Details Page,</li>
+   <li>Checkout Page,and</li>
+   <li>Payment Page</li>
+ </ul>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <ins>The Tech Stacks Used: </ins>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>React</li>
+    <li>Redux</li>
+    <li>Chakra-UI</li>
+    <li>Material UI</li>
+  </ul>
+  
+  <ins>The Demo of Website:</ins> <br/><br/>
+  The User on Visiting the website lands on the home page:
+  ![image](https://user-images.githubusercontent.com/103308419/214508860-7c076a90-8cdd-4f1d-b71e-2aae247f6748.png)
+  <br/><br/>The Login and Signup Page:
+  ![image](https://user-images.githubusercontent.com/103308419/214509016-8c2d4876-b278-4ad1-8e38-ce4ee3fe1314.png)
+  <br/><br/>The user details form:
+  ![image](https://user-images.githubusercontent.com/103308419/214509127-0208b202-0d5b-4e18-812e-7230fc79b910.png)
+  <br/><br/> The policies details page:<br/>
+  ![image](https://user-images.githubusercontent.com/103308419/214509275-208ae73b-69e8-44c0-b9c1-1dd32c8e3285.png)
+  <br/><br/>The checkout Page:
+  ![image](https://user-images.githubusercontent.com/103308419/214509443-0a1ec97a-e098-4c9d-b48c-c86743c3907c.png)
+  <br/><br/>THe final Payment Page
+  ![image](https://user-images.githubusercontent.com/103308419/214509568-895c5f60-73ff-439c-a589-dc4b31eed478.png)
 
-## Available Scripts
 
-In the project directory, you can run:
+</h5>
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
