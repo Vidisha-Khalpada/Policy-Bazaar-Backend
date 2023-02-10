@@ -102,7 +102,7 @@ const HomePage = () => {
 
           <div className="home-maind">
             <div className="home-tol">
-              <img src={umre} alt="one" />
+              <img src={umre} alt="one"/>
               <p className="home-tm">Travel Insurance </p>
             </div>
 
