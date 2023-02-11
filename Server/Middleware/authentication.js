@@ -7,6 +7,7 @@ let jwtsecret=process.env.SECRET
 const authenticate=(req,res,next)=>
 {
     const token=req.headers?.authorization?.split(" ").pop()
+    console.log(req.body)
     if(token)
     {
         const decoded=jwt.verify(token,jwtsecret)

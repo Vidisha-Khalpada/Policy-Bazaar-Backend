@@ -13,19 +13,26 @@ const FinalCheckout=()=>
     let token=localStorage.getItem("authtoken")
     useEffect(()=>
     {
-        axios.get(`${url}/allinsurance`).then((res)=>
+        let f=async()=>
         {
-            console.log(res.data.data)
-            let arr=res.data.data.filter((ele)=>
+            let arr=[]
+            let res=await fetch(`${url}/allinsurance`)
+            let data=await res.json()
+            arr=data.data.filter((ele)=>
             {
                 return ele.clim_settled==clim_settled
             })
+            console.log(arr[0])
             axios.post(`${url}/addinsurance`,arr[0],{
                 headers:{
                     "Authorization":token
                 }
-            })
-        })
+            }).then((resp)=>console.log(resp))
+        }
+        f()
+        
+        
+        
     },[])
     const navigate=useNavigate()
     return(

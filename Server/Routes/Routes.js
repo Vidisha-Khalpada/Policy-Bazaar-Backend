@@ -56,9 +56,11 @@ router.get("/allinsurance",async(req,res)=>
 router.post("/addinsurance",authenticate,async(req,res)=>
 {
     try {
+        console.log(req.body)
         await UserInsuranceModel.create(req.body)
         res.send({
-            "message":"The data is successfully added."
+            "message":"The data is successfully added.",
+            data:req.body
         })
     } catch (error) {
         res.status(400).send(error)
